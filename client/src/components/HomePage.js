@@ -2,6 +2,8 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 
+//Make Axios call to server to display tweetData hardcoded into server.js
+
 function HomePage() {
     return (
         <div>
