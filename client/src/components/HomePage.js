@@ -3,8 +3,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 
 //Make Axios call to server to display tweetData hardcoded into server.js
+// const tweetData = {
+//     "userId": 1,
+//     "id": 1,
+//     "user": " Cesar Preza",
+//     "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+//     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+// },
+const tweetData = {
+        "userId": 1,
+        "id": 1,
+        "user": " Cesar Preza",
+        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+    };
+
 
 function HomePage() {
+        
     return (
         <div>
             <div>
@@ -20,6 +36,9 @@ function HomePage() {
             </div>
             <div>
                 <h1>Home Page</h1>
+                <button onClick={() => {
+                            console.log(tweetData);
+                        }}>Click me!</button>
             </div>
             
         </div>
