@@ -23,7 +23,7 @@ class HomePage extends React.Component {
     return (
             <div>
                 <div>
-                <nav className='navbar navbar-light navbar-expand-md'
+                <nav className='navbar navbar-light navbar-expand-sm'
                     style={{ backgroundColor: 'lightblue' }} >
                         <h3 className='navbar-brand'>Tweet Hunt</h3>
                             <div className='collapse navbar-collapse' id='menuContainer'>

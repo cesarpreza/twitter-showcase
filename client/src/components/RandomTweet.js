@@ -6,7 +6,7 @@ class RandomTweet extends Component {
         return (
             <div>
                 <div>
-                    <nav className='navbar navbar-expand-md navbar-light'
+                    <nav className='navbar navbar-light navbar-expand-sm'
                     style={{ backgroundColor: 'lightblue' }}>
                         <h3 className='navbar-brand'>Tweet Hunt</h3>
                         <div className='collapse navbar-collapse'>
