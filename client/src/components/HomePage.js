@@ -23,14 +23,22 @@ class HomePage extends React.Component {
     return (
             <div>
                 <div>
-                    <nav className='navbar-expand-md navbar-light' style={{backgroundColor: 'lightblue'}} >
-                        <h1>Twitter Showcase App</h1>
-                        <Link to='/search'>
-                            <button>Search</button>
-                        </Link>
-                        <Link to='/random'>
-                            <button>Random Tweet</button>
-                        </Link>
+                    <nav className='navbar navbar-light navbar-expand-md' style={{backgroundColor: 'lightblue'}} >
+                    <h3 className='navbar-brand'>Tweet Hunt</h3>
+                        <div className='collapse navbar-collapse' id='menuContainer'>
+                            <ul className='navbar-nav ml-auto'>
+                                        <li className='nav-item'>
+                                            <Link className='nav-link' to='/search'>
+                                                <button className='btn btn-primary'>Search</button>
+                                            </Link>
+                                        </li>
+                                        <li className='nav-item'>
+                                            <Link className='nav-link' to='/random'>
+                                                <button className='btn btn-primary' >Random Tweet</button>
+                                            </Link>
+                                        </li>
+                                    </ul>
+                        </div>
                     </nav>
                 </div>
                 <div>

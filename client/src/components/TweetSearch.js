@@ -6,14 +6,24 @@ class TweetSearch extends Component {
         return (
             <div>
                 <div> 
-                    <nav className='navbar-expand-md navbar-light' style={{ backgroundColor: 'lightblue' }}>
-                        <h1>Twitter Showcase App</h1>
-                        <Link to='/' >
-                            <button>Home</button>
-                        </Link>
-                        <Link to='/random'>
-                            <button>Random Tweet</button>
-                        </Link>
+                    <nav className='navbar navbar-light navbar-expand-md' style={{ backgroundColor: 'lightblue' }}>
+                        <h3 className='navbar-brand'>Tweet Hunt</h3>
+                        <div className='collapse navbar-collapse'>
+                            <ul className='navbar-nav ml-auto'>
+                                <li className='nav-item'>
+                                    <Link className='nav-link' to='/' >
+                                        <button className='btn btn-primary'>Home</button>
+                                    </Link>
+                                </li>
+                                <li className='nav-item'>
+                                    <Link className='nav-link' to='/random'>
+                                        <button className='btn btn-primary'>Random Tweet</button>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        
                     </nav>
                 </div>
                 
