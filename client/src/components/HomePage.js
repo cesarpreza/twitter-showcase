@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
-//import Axios from 'axios';
+import axios from 'axios';
 
 //Make Axios call to server to display tweetData hardcoded into server.js
 
@@ -14,9 +14,10 @@ class HomePage extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick() {
-        this.setState({ userTweet: 'a tweet' });
-        console.log('tweet changed');
+    async handleClick() {
+        const tweetUrl = await axios.get(`/api/tweets`);
+        const tweetResponse = tweetUrl.data.name;
+        console.log(tweetResponse);
     }
 
     render(){
@@ -44,7 +45,10 @@ class HomePage extends React.Component {
                 </div>
                 <div>
                     <h1>Home Page</h1>
-                    <button onClick={this.handleClick}>Click me!</button>
+                    <button onClick={this.handleClick} className='btn btn-primary'>Click me!</button>
+                    <ul>
+                        <li> {this.tweetResponse} </li>
+                    </ul>
                 </div>
                 
             </div>
