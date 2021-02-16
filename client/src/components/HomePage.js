@@ -4,25 +4,12 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 //Make Axios call to server to display tweetData hardcoded into server.js
-
+//Delete state from this component! 
+//Make splash page look dope!
 class HomePage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            userTweet: []
         }
-    }
-
-    async componentDidMount() {
-        const tweetUrl = await axios.get(`/api/tweets`);
-        const tweetResponse = tweetUrl.data;
-        this.setState({userTweet: tweetResponse})
-        
-        console.log(this.state.userTweet);
-    }
-
-    
-
 
     render() {
     return (
@@ -46,22 +33,13 @@ class HomePage extends React.Component {
                                         </ul>
                         </div>
                     </nav>
-                </div>
-                <div>
-                    <h1>Home Page</h1>
-                    <hr />
-                <ul>
-                    {this.state.userTweet.map(data => {
-                        return <div>
-                                    <li key={data.id}> {data.name} </li>
-                                    <li key={data.id}> {data.homeworld} </li>
-                                    <li key={data.id}> {data.height} </li>
-                                    <li key={data.id}> {data.gender} </li>
-                                </div>
-                    })}
-                </ul>
-                </div>
-                
+            </div>
+                <main>
+                    <div>
+                    <h2>Welcome to the Twitter Showcase App</h2>
+                        <h3>Below you'll find some tweets from my favorite accounts, or try searching for your own using the toolbar</h3>
+                    </div>
+                </main>
             </div>
         )
     }

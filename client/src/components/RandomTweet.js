@@ -1,7 +1,22 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios'
 
 class RandomTweet extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            userTweet: []
+        }
+    }
+
+    async componentDidMount() {
+        const tweetUrl = await axios.get(`/api/tweets`);
+        const tweetResponse = tweetUrl.data;
+        this.setState({userTweet: tweetResponse})
+        
+        console.log(this.state.userTweet);
+    }
     render() {
         return (
             <div>
@@ -27,9 +42,17 @@ class RandomTweet extends Component {
                         
                     </nav>
                 </div>
-                <div>
-                    <h1>Random Tweet Page</h1>
-                </div>
+                <main>
+                    <div>
+                        <div>
+                            <h2>Select an icon to display 5 random tweets from that acount</h2>
+                        </div>
+                        <div> {/* twitter icons will display here */} 
+                            <h3>hello world</h3> {/**image times 5 */}
+                            <h3>sup foo</h3>
+                        </div>
+                    </div>
+                </main>
             </div>
         )
     }
