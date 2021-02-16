@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import HomePage from './components/HomePage';
 import TweetSearch from './components/TweetSearch';
 import RandomTweet from './components/RandomTweet';

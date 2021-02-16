@@ -9,17 +9,20 @@ app.use('/', express.static(path.join(__dirname , 'client/build')));
 app.listen(port, () => console.log('listening on port 3000'));
 
 app.get(`/api/tweets`, (req, res) => {
-    const tweetData = {
-        "name": "Luke Skywalker",
-        "height": "172",
-        "mass": "77",
-        "hair_color": "blond",
-        "skin_color": "fair",
-        "eye_color": "blue",
-        "birth_year": "19BBY",
-        "gender": "male",
-        "homeworld": "https://swapi.dev/api/planets/1/",
-    }
+    const tweetData = [
+        {
+            "id": 1,
+            "name": "Luke Skywalker",
+            "height": "172",
+            "mass": "77",
+            "hair_color": "blond",
+            "skin_color": "fair",
+            "eye_color": "blue",
+            "birth_year": "19BBY",
+            "gender": "male",
+            "homeworld": "Tattoine",
+        }
+    ]
     res.json(tweetData);
 })
 

@@ -9,18 +9,22 @@ class HomePage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            userTweet: ''
+            userTweet: []
         }
-        this.handleClick = this.handleClick.bind(this);
     }
 
-    async handleClick() {
+    async componentDidMount() {
         const tweetUrl = await axios.get(`/api/tweets`);
-        const tweetResponse = tweetUrl.data.name;
-        console.log(tweetResponse);
+        const tweetResponse = tweetUrl.data;
+        this.setState({userTweet: tweetResponse})
+        
+        console.log(this.state.userTweet);
     }
 
-    render(){
+    
+
+
+    render() {
     return (
             <div>
                 <div>
@@ -45,10 +49,17 @@ class HomePage extends React.Component {
                 </div>
                 <div>
                     <h1>Home Page</h1>
-                    <button onClick={this.handleClick} className='btn btn-primary'>Click me!</button>
-                    <ul>
-                        <li> {this.tweetResponse} </li>
-                    </ul>
+                    <hr />
+                <ul>
+                    {this.state.userTweet.map(data => {
+                        return <div>
+                                    <li key={data.id}> {data.name} </li>
+                                    <li key={data.id}> {data.homeworld} </li>
+                                    <li key={data.id}> {data.height} </li>
+                                    <li key={data.id}> {data.gender} </li>
+                                </div>
+                    })}
+                </ul>
                 </div>
                 
             </div>
