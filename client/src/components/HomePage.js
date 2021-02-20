@@ -3,9 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-//Make Axios call to server to display tweetData hardcoded into server.js
-//Delete state from this component! 
-//Make splash page look dope!
+
 class HomePage extends React.Component {
     constructor(props) {
         super(props);
@@ -37,7 +35,8 @@ class HomePage extends React.Component {
                 <main>
                     <div>
                     <h2>Welcome to the Twitter Showcase App</h2>
-                        <h3>Below you'll find some tweets from my favorite accounts, or try searching for your own using the toolbar</h3>
+                    <h3>Use the Random Tweet button to see tweets from 5 of my favorite accounts
+                        or try searching for your own using the toolbar</h3>
                     </div>
                 </main>
             </div>

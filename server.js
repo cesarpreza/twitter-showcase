@@ -22,9 +22,14 @@ app.get(`/api`, (req, res) => {
     })
 })
 
+//make an axios get request to swapi for now.
+//check postman to make sure the data is being returned. ERROR here. 
+//change swapi data to twitter data using bearer token. 
+//once data is getting pulled to back end server, make axios call to back end from the front end to display the data.
+
 
 //make call to relative path using tweetData
-//In HomePage/App.js make axios call to server to get data back in the console. 
+//In HomePage/App.js make axios call to server to pull data to front end. 
 
 //API Key: eD8dNSshMep0cFHD1oayU9fCk
 //API Secret Key: fqUY3Fk6aCyUharES8EApjoI1uqploU0Yh1ejBvTpJ75az2P4l
