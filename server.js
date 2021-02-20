@@ -23,7 +23,7 @@ app.get(`/api`, (req, res) => {
 })
 
 //make an axios get request to swapi for now.
-//check postman to make sure the data is being returned. ERROR here. 
+//check postman to make sure the data is being returned. ERROR: connect ECONNREFUSED 127.0.0.1:80
 //change swapi data to twitter data using bearer token. 
 //once data is getting pulled to back end server, make axios call to back end from the front end to display the data.
 
