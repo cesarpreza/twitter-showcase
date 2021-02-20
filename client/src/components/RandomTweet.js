@@ -49,7 +49,6 @@ class RandomTweet extends Component {
                         </div>
                         <div> {/* twitter icons will display here */} 
                             <h3>hello world</h3> {/**image times 5 */}
-                            <h3>sup foo</h3>
                         </div>
                     </div>
                 </main>
