@@ -12,7 +12,7 @@ app.listen(port, () => console.log('listening on port 3000'));
 app.get(`/api`, (req, res) => {
     axios({
         method: 'get',
-        url: 'http https://swapi.dev/api/people/1/',
+        url: 'http://swapi.dev/api/people/1/',
     })
         .then((response) => {
             res.json(response.data);
@@ -24,7 +24,7 @@ app.get(`/api`, (req, res) => {
 
 //make an axios get request to swapi for now.
 //check postman to make sure the data is being returned. ERROR: connect ECONNREFUSED 127.0.0.1:80
-//change swapi data to twitter data using bearer token. 
+//change swapi data to twitter data using bearer token. ~
 //once data is getting pulled to back end server, make axios call to back end from the front end to display the data.
 
 
