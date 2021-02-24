@@ -2,6 +2,9 @@ const axios = require('axios');
 const express = require('express');
 const path = require('path');
 const port = 3000;
+require('dotenv').config();
+const token = process.env.TOKEN;
+
 
 const app = express();
 
@@ -12,7 +15,10 @@ app.listen(port, () => console.log('listening on port 3000'));
 app.get(`/api`, (req, res) => {
     axios({
         method: 'get',
-        url: 'http://swapi.dev/api/people/1/',
+        url: 'https://api.twitter.com/1.1/search/tweets.json?q=nasa&result_type=popular',
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
     })
         .then((response) => {
             res.json(response.data);
@@ -31,7 +37,7 @@ app.get(`/api`, (req, res) => {
 //make call to relative path using tweetData
 //In HomePage/App.js make axios call to server to pull data to front end. 
 
-//API Key: eD8dNSshMep0cFHD1oayU9fCk
-//API Secret Key: fqUY3Fk6aCyUharES8EApjoI1uqploU0Yh1ejBvTpJ75az2P4l
-//API Bearer Token: AAAAAAAAAAAAAAAAAAAAALSGMwEAAAAAWnZ%2FET8Kbvv61sjWuWQpRqP2tZo%3DzpvoqU6BOqu9ePL96aOb56vjcK0XTvY3xuPCv8PKbdqF8jL6JE 
+//API Key: 
+//API Secret Key: 
+//API Bearer Token:  
 
