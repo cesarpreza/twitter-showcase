@@ -12,25 +12,26 @@ class RandomTweet extends Component {
 
     async componentDidMount() {
         const tweetUrl = await axios.get(`/api`);
-        console.log(tweetUrl.data.statuses[0].text);
+        const tweetResponse = tweetUrl.data.statuses[0].text;
+        this.setState({ userTweet: tweetResponse });
     }
     render() {
+        console.log(this.state)
         return (
-            <div>
+            <div className='page-container'>
                 <div>
-                    <nav className='navbar navbar-light navbar-expand-sm'
-                    style={{ backgroundColor: 'lightblue' }}>
+                    <nav className='navbar navbar-light navbar-expand-sm'>
                         <h3 className='navbar-brand'>Tweet Hunt</h3>
                         <div className='collapse navbar-collapse'>
                             <ul className='navbar-nav ml-auto'>
                                 <li className='nav-item'>
                                     <Link className='nav-link' to='/' >
-                                        <button className='btn btn-primary'>Home</button>
+                                        <button className='btn btn-secondary'>Home</button>
                                     </Link>
                                 </li>
                                 <li className='nav-item'>
                                     <Link className='nav-link' to='/search'>
-                                        <button className=' btn btn-primary'>Search</button>
+                                        <button className=' btn btn-secondary'>Search</button>
                                     </Link>
                                 </li>
                             </ul>
@@ -45,7 +46,11 @@ class RandomTweet extends Component {
                             <h2>Select an icon to display 5 random tweets from that acount</h2>
                         </div>
                         <div> {/* twitter icons will display here */} 
-                            <h3>Images</h3> {/**image times 5 */}
+                            {/* Make an API call to an account 
+                                Grab logo from twitter account and display a button under the icon
+                                on clicking the button, a random tweet from that user will display
+                                 */}
+                            <h3> {this.state.userTweet} </h3>
                         </div>
                     </div>
                 </main>
