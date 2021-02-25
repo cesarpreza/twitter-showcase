@@ -11,11 +11,8 @@ class RandomTweet extends Component {
     }
 
     async componentDidMount() {
-        const tweetUrl = await axios.get(`/api/tweets`);
-        const tweetResponse = tweetUrl.data;
-        this.setState({userTweet: tweetResponse})
-        
-        console.log(this.state.userTweet);
+        const tweetUrl = await axios.get(`/api`);
+        console.log(tweetUrl.data.statuses[0].text);
     }
     render() {
         return (

@@ -15,7 +15,7 @@ app.listen(port, () => console.log('listening on port 3000'));
 app.get(`/api`, (req, res) => {
     axios({
         method: 'get',
-        url: 'https://api.twitter.com/1.1/search/tweets.json?q=elonmusk&result_type=popular',
+        url: 'https://api.twitter.com/1.1/search/tweets.json?q=nasa&result_type=popular',
         headers: {
             Authorization: `Bearer ${token}`
         }
