@@ -14,13 +14,19 @@ function App() {
           <h3 className='navbar-brand'>Tweet Hunt</h3>
             <ul className='navbar-nav ml-auto'>
               <li className='nav-item'>
-                <Link to="/">Home</Link>
+                <Link className='nav-link' to="/">
+                  <button className='btn btn-secondary'>Home</button>
+                </Link>
               </li>
               <li className='nav-item'>
-                <Link to="/search">Search</Link>
+                <Link className='nav-link' to="/search">
+                  <button className='btn btn-secondary'>Search</button>
+                </Link>
               </li>
               <li className='nav-item'>
-                <Link to="/random">Random</Link>
+                <Link className='nav-link' to="/random">
+                  <button className='btn btn-secondary'>Random Tweet</button>
+                </Link>
               </li>
             </ul>
         </nav>

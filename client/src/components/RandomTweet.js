@@ -27,27 +27,6 @@ class RandomTweet extends Component {
         console.log(this.state)
         return (
             <div className='page-container'>
-                {/* <div>
-                    <nav className='navbar navbar-light navbar-expand-sm'>
-                        <h3 className='navbar-brand'>Tweet Hunt</h3>
-                        <div className='collapse navbar-collapse'>
-                            <ul className='navbar-nav ml-auto'>
-                                <li className='nav-item'>
-                                    <Link className='nav-link' to='/' >
-                                        <button className='btn btn-secondary'>Home</button>
-                                    </Link>
-                                </li>
-                                <li className='nav-item'>
-                                    <Link className='nav-link' to='/search'>
-                                        <button className=' btn btn-secondary'>Search</button>
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                        
-                        
-                    </nav>
-                </div> */}
                 <main>
                     <div>
                         <div>

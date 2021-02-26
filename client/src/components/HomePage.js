@@ -11,25 +11,6 @@ class HomePage extends React.Component {
     render() {
     return (
             <div className='page-container'>
-                {/* <div>
-                <nav className='navbar navbar-light navbar-expand-sm'>
-                        <h3 className='navbar-brand'>Tweet Hunt</h3>
-                            <div className='collapse navbar-collapse' id='menuContainer'>
-                                <ul className='navbar-nav ml-auto'>
-                                            <li className='nav-item'>
-                                                <Link className='nav-link' to='/search'>
-                                                    <button className='btn btn-secondary'>Search</button>
-                                                </Link>
-                                            </li>
-                                            <li className='nav-item'>
-                                                <Link className='nav-link' to='/random'>
-                                                    <button className='btn btn-secondary' >Random Tweet</button>
-                                                </Link>
-                                            </li>
-                                        </ul>
-                        </div>
-                    </nav>
-                </div> */}
                 <main>
                     <div>
                     <h2>Welcome to the Twitter Showcase App</h2>
