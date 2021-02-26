@@ -5,7 +5,7 @@ class TweetSearch extends Component {
     render() {
         return (
             <div className='page-container'>
-                <div> 
+                {/* <div> 
                     <nav className='navbar navbar-light navbar-expand-sm'>
                         <h3 className='navbar-brand'>Tweet Hunt</h3>
                         <div className='collapse navbar-collapse'>
@@ -25,7 +25,7 @@ class TweetSearch extends Component {
                         
                         
                     </nav>
-                </div>
+                </div> */}
                 
                 <div>
                     <h1>Search Page</h1>

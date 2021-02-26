@@ -6,20 +6,28 @@ class RandomTweet extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userTweet: []
+            userTweets: []
         }
+        this.getTweets = this.getTweets.bind(this);
     }
 
-    async componentDidMount() {
-        const tweetUrl = await axios.get(`/api`);
-        const tweetResponse = tweetUrl.data.statuses[0].text;
-        this.setState({ userTweet: tweetResponse });
+    
+    componentDidMount() {
+        this.getTweets()
     }
+
+    async getTweets() {
+        const tweetUrl = await axios.get(`/api`);
+        const tweetResponse = tweetUrl.data.statuses;
+        this.setState({ userTweets: tweetResponse });
+        console.log(tweetResponse)
+    }
+
     render() {
         console.log(this.state)
         return (
             <div className='page-container'>
-                <div>
+                {/* <div>
                     <nav className='navbar navbar-light navbar-expand-sm'>
                         <h3 className='navbar-brand'>Tweet Hunt</h3>
                         <div className='collapse navbar-collapse'>
@@ -39,7 +47,7 @@ class RandomTweet extends Component {
                         
                         
                     </nav>
-                </div>
+                </div> */}
                 <main>
                     <div>
                         <div>

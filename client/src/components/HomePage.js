@@ -11,7 +11,7 @@ class HomePage extends React.Component {
     render() {
     return (
             <div className='page-container'>
-                <div>
+                {/* <div>
                 <nav className='navbar navbar-light navbar-expand-sm'>
                         <h3 className='navbar-brand'>Tweet Hunt</h3>
                             <div className='collapse navbar-collapse' id='menuContainer'>
@@ -29,7 +29,7 @@ class HomePage extends React.Component {
                                         </ul>
                         </div>
                     </nav>
-            </div>
+                </div> */}
                 <main>
                     <div>
                     <h2>Welcome to the Twitter Showcase App</h2>
