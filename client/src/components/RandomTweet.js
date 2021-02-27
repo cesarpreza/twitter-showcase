@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios'
 
 class RandomTweet extends Component {
@@ -37,7 +36,9 @@ class RandomTweet extends Component {
                                 Grab logo from twitter account and display a button under the icon
                                 on clicking the button, a random tweet from that user will display
                                  */}
-                            <h3> {this.state.userTweet} </h3>
+                            {this.state.userTweets.map(tweet => {
+                                <li> {tweet.text} </li>
+                            })}
                         </div>
                     </div>
                 </main>

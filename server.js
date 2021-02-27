@@ -12,6 +12,10 @@ app.use('/', express.static(path.join(__dirname , 'client/build')));
 
 app.listen(port, () => console.log('listening on port 3000'));
 
+app.get('/*', (res => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+}));
+
 app.get(`/api`, (req, res) => {
     axios({
         method: 'get',
