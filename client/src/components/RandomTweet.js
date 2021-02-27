@@ -5,21 +5,21 @@ class RandomTweet extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userTweets: []
+            nasaTweets: []
         }
         this.getTweets = this.getTweets.bind(this);
     }
 
     
     componentDidMount() {
-        this.getTweets()
+        this.getTweets('/api')
     }
 
-    async getTweets() {
-        const tweetUrl = await axios.get(`/api`);
-        const tweetResponse = tweetUrl.data.statuses;
-        this.setState({ userTweets: tweetResponse });
-        console.log(tweetResponse)
+    async getTweets(url) {
+        const nasaTweetUrl = await axios.get(url);
+        const nasaTweetResponse = nasaTweetUrl.data.statuses[0].text;
+        this.setState({ nasaTweets: nasaTweetResponse });
+        console.log(nasaTweetResponse)
     }
 
     render() {
@@ -29,16 +29,19 @@ class RandomTweet extends Component {
                 <main>
                     <div>
                         <div>
-                            <h2>Select an icon to display 5 random tweets from that acount</h2>
+                            <h2>Select a user to display a random tweets from that acount</h2>
                         </div>
                         <div> {/* twitter icons will display here */} 
                             {/* Make an API call to an account 
                                 Grab logo from twitter account and display a button under the icon
                                 on clicking the button, a random tweet from that user will display
                                  */}
-                            {this.state.userTweets.map(tweet => {
-                                <li> {tweet.text} </li>
-                            })}
+                            {/* <h3>
+                                {this.state.nasaTweets.map(tweet => {
+                                    <p> {tweet.data} </p>
+                                })}
+                            </h3> */}
+                            {this.state.nasaTweets}
                         </div>
                     </div>
                 </main>
