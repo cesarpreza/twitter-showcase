@@ -12,9 +12,6 @@ app.use('/', express.static(path.join(__dirname , 'client/build')));
 
 app.listen(port, () => console.log('listening on port 3000'));
 
-app.get('/*', (res => {
-    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
-}));
 
 app.get(`/api`, (req, res) => {
     axios({
@@ -31,6 +28,10 @@ app.get(`/api`, (req, res) => {
         console.log(err.message)
     })
 })
+
+app.get("/*", (req, res) =>
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"))
+);
 
 //make call to relative path using tweetData
 //In HomePage/App.js make axios call to server to pull data to front end. 
