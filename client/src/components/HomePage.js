@@ -14,7 +14,7 @@ class HomePage extends React.Component {
                     <div>
                     <h2>Welcome to the Twitter Showcase App</h2>
                     <h3>Use the Random Tweet button to see tweets from 5 of my favorite accounts
-                        or try searching for your own using the toolbar</h3>
+                        or try searching for your own using the search option</h3>
                     </div>
                 </main>
             </div>
