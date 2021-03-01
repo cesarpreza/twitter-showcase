@@ -7,10 +7,16 @@ nav {
 	background-color: #9fb8ad;
 }
 
-.tweetCard {
-	background-color: red;
-	border-radius: 10%;
-	position: absolute;
-	margin: auto;
-	width: 50%;
+.tweet-container {
+	background-color: #314e52;
+	margin-top: 25px;
+	height: 75vh;
+	width: 100%;
+}
+
+figure img {
+	border-radius: 10px;
+	height: 100px;
+	margin: 20px;
+	width: 115px;
 }
