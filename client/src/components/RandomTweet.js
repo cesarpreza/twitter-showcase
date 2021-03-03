@@ -48,11 +48,11 @@ class RandomTweet extends Component {
                                     <img className='image' src={disneyImage}></img>
                                 </figure>
                                 <div>
-                                    <button id='kingsButton'>Click</button>
-                                    <button id='espnButton'>Click</button>
+                                    <button id='kingsButton'>Kings</button>
+                                    <button id='espnButton'>ESPN</button>
                                     <button id='nasaButton' onClick={() => this.handleClick()}>Nasa</button>
-                                    <button id='starWarsButton'>Click</button>
-                                    <button id='disneyButton'>Click</button>
+                                    <button id='starWarsButton'>Star Wars</button>
+                                    <button id='disneyButton'>Disney</button>
                             </div>
                                     {this.state.tweet !== null ?
                                         <div className='tweetCard'>
