@@ -14,6 +14,10 @@ nav {
 	width: 100%;
 }
 
+.tweetCard {
+	background-color: blue;
+}
+
 figure img {
 	border-radius: 10px;
 	height: 100px;

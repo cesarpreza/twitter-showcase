@@ -13,10 +13,11 @@ class RandomTweet extends Component {
         tweet: null
         }
         this.getTweets = this.getTweets.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     
-    componentDidMount() {
+    handleClick() {
         this.getTweets('/api')
     }
 
@@ -49,12 +50,12 @@ class RandomTweet extends Component {
                                 <div>
                                     <button id='kingsButton'>Click</button>
                                     <button id='espnButton'>Click</button>
-                                    <button id='nasaButton'>Click</button>
+                                    <button id='nasaButton' onClick={() => this.handleClick()}>Nasa</button>
                                     <button id='starWarsButton'>Click</button>
                                     <button id='disneyButton'>Click</button>
                             </div>
                                     {this.state.tweet !== null ?
-                                        <div>
+                                        <div className='tweetCard'>
                                             <p>username: {this.state.tweet.user.screen_name} </p>
                                             <p>tweet: { this.state.tweet.text }</p>
                                         </div> :
