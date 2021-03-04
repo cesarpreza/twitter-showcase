@@ -12,11 +12,13 @@ app.use('/', express.static(path.join(__dirname , 'client/build')));
 
 app.listen(port, () => console.log('listening on port 3000'));
 
+const nasa = 'nasa';
+
 
 app.get(`/api`, (req, res) => {
     axios({
         method: 'get',
-        url: 'https://api.twitter.com/1.1/search/tweets.json?q=nasa',
+        url: `https://api.twitter.com/1.1/search/tweets.json?q=nasa`,
         headers: {
             Authorization: `Bearer ${token}`
         }
