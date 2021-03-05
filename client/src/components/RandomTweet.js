@@ -17,8 +17,8 @@ class RandomTweet extends Component {
     }
 
     
-    handleClick() {
-        this.getTweets('/api')
+    handleClick(username) {
+        this.getTweets(`/api?${username}&result_type=popular`);
     }
 
     async getTweets(url) {
@@ -26,7 +26,7 @@ class RandomTweet extends Component {
         const tweetResponse = tweetUrl.data.statuses;
         const randomTweet = tweetResponse[Math.floor(Math.random() * tweetResponse.length)];
         this.setState({ tweet: randomTweet });
-        console.log(randomTweet);
+        console.log(randomTweet.user.screen_name);
     }
 
     render() {
@@ -48,11 +48,11 @@ class RandomTweet extends Component {
                                     <img className='image' src={disneyImage}></img>
                                 </figure>
                                 <div>
-                                    <button id='kingsButton' name='lakings'>Kings</button>
-                                    <button id='espnButton' name='espn'>ESPN</button>
-                                    <button id='nasaButton' name='nasa' onClick={() => this.handleClick()}>Nasa</button>
-                                    <button id='starWarsButton' name='starwars'>Star Wars</button>
-                                    <button id='disneyButton' name='disney'>Disney</button>
+                                    <button id='kingsButton' name='lakings' onClick={() => this.handleClick('lakings')}>Kings</button>
+                                    <button id='espnButton' name='espn' onClick={() => this.handleClick('espn')}>ESPN</button>
+                                    <button id='nasaButton' name='nasa' onClick={() => this.handleClick('nasa')}>Nasa</button>
+                                    <button id='starWarsButton' name='starwars' onClick={() => this.handleClick('starwars')}>Star Wars</button>
+                                    <button id='disneyButton' name='disney' onClick={() => this.handleClick('disney')}>Disney</button>
                             </div>
                                     {this.state.tweet !== null ?
                                         <div className='tweetCard'>
