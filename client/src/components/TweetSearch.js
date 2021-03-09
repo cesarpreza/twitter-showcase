@@ -1,4 +1,5 @@
-import React,  { Component } from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
 
 class TweetSearch extends Component {
     constructor() {
@@ -11,10 +12,25 @@ class TweetSearch extends Component {
     }
 
     handleChange(e) {
-        this.setState({ searchTerm: e.target.value })
+        axios.get(`api/searchTerm=${this.state.searchTerm}`)
+            .then(res => {
+                this.setState({ searchTerm: e.target.value })
+        })
         
         
     }
+
+    // handleClick = e => {
+    //     e.preventDefault();
+    //     axios
+    //       .get(`/api/searchTerm=${this.state.searchTerm}`)
+    //       .then(response => {
+    //         this.setState({ //set state here });
+    //       })
+    //       .catch(error => {
+    //         console.log(error);
+    //       });
+    //   };
 
     handleSubmit = e => {
         e.preventDefault();
