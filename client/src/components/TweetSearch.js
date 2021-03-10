@@ -26,8 +26,6 @@ class TweetSearch extends Component {
         console.log('submit');
     }
 
-    //tweets that come back are mentions not actual tweets from the user. Same in Random page
-
     render() {
         console.log(this.state.searchTerm);
         console.log(this.state.tweet)
@@ -35,8 +33,8 @@ class TweetSearch extends Component {
             <div className='page-container'>
                 <div>
                     <h1>Search for a twitter user</h1>
-                    <form onChange={this.handleChange}>
-                        <input type='text' placeholder='search for a tweet..'></input>
+                    <form>
+                        <input required type='text' value={this.state.searchTerm} onChange={this.handleChange} placeholder='search for a tweet..'></input>
                         <button onClick={this.handleSubmit}>Search</button>
                         {this.state.tweet !== null ? 
                             <div>
