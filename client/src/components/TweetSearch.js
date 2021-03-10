@@ -16,18 +16,6 @@ class TweetSearch extends Component {
         this.setState({ searchTerm: e.target.value });
     }
 
-    // handleClick = e => {
-    //     e.preventDefault();
-    //     axios
-    //       .get(`/api/searchTerm=${this.state.searchTerm}`)
-    //       .then(response => {
-    //         this.setState({ //set state here });
-    //       })
-    //       .catch(error => {
-    //         console.log(error);
-    //       });
-    //   };
-
     handleSubmit = e => {
         e.preventDefault();
         axios
@@ -38,16 +26,9 @@ class TweetSearch extends Component {
         console.log('submit');
     }
 
-    // {this.state.tweet !== null ?
-    //     <div className='tweetCard'>
-    //         <p>username: {this.state.tweet.user.screen_name} </p>
-    //         <p>tweet: { this.state.tweet.text }</p>
-    //     </div> :
-    //     null }
-
     render() {
         console.log(this.state.searchTerm);
-        console.log(this.state.tweets)
+        console.log(this.state.tweet)
         return (
             <div className='page-container'>
                 <div>
