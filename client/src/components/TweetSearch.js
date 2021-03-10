@@ -26,6 +26,8 @@ class TweetSearch extends Component {
         console.log('submit');
     }
 
+    //tweets that come back are mentions not actual tweets from the user. Same in Random page
+
     render() {
         console.log(this.state.searchTerm);
         console.log(this.state.tweet)
