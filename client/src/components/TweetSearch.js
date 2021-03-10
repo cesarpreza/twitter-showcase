@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useDebugValue } from 'react';
 import axios from 'axios';
 
 class TweetSearch extends Component {
@@ -6,18 +6,14 @@ class TweetSearch extends Component {
         super()
         this.state = {
             searchTerm: '',
+            tweet: null,
         }
         this.handleChange = this.handleChange.bind(this);
         this.HandleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(e) {
-        axios.get(`api/searchTerm=${this.state.searchTerm}`)
-            .then(res => {
-                this.setState({ searchTerm: e.target.value })
-        })
-        
-        
+        this.setState({ searchTerm: e.target.value });
     }
 
     // handleClick = e => {
@@ -34,11 +30,24 @@ class TweetSearch extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
+        axios
+            .get(`/api?username=${this.state.searchTerm}`)
+            .then(res => {
+                this.setState({tweet: res.data.statuses[0], searchTerm: ''})
+            })
         console.log('submit');
     }
 
+    // {this.state.tweet !== null ?
+    //     <div className='tweetCard'>
+    //         <p>username: {this.state.tweet.user.screen_name} </p>
+    //         <p>tweet: { this.state.tweet.text }</p>
+    //     </div> :
+    //     null }
+
     render() {
         console.log(this.state.searchTerm);
+        console.log(this.state.tweets)
         return (
             <div className='page-container'>
                 <div>
@@ -46,6 +55,12 @@ class TweetSearch extends Component {
                     <form onChange={this.handleChange}>
                         <input type='text' placeholder='search for a tweet..'></input>
                         <button onClick={this.handleSubmit}>Search</button>
+                        {this.state.tweet !== null ? 
+                            <div>
+                                <p>Username: {this.state.tweet.user.screen_name}</p>
+                                <p>Tweet: { this.state.tweet.text }</p>
+                            </div> :
+                            null }
                     </form>
                 </div>
             </div>
