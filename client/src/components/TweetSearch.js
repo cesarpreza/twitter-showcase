@@ -6,7 +6,8 @@ class TweetSearch extends Component {
         super()
         this.state = {
             searchTerm: '',
-            tweet: null,
+            isInputValid: false,
+            tweet: null
         }
         this.handleChange = this.handleChange.bind(this);
         this.HandleSubmit = this.handleSubmit.bind(this);
@@ -21,7 +22,7 @@ class TweetSearch extends Component {
         axios
             .get(`/api?username=${this.state.searchTerm}`)
             .then(res => {
-                this.setState({tweet: res.data.statuses[0], searchTerm: ''})
+                this.setState({ tweet: res.data.statuses, searchTerm: '' })
             })
         console.log('submit');
     }
@@ -36,12 +37,18 @@ class TweetSearch extends Component {
                     <form>
                         <input required type='text' value={this.state.searchTerm} onChange={this.handleChange} placeholder='search for a tweet..'></input>
                         <button onClick={this.handleSubmit}>Search</button>
-                        {this.state.tweet !== null ? 
-                            <div>
-                                <p>Username: {this.state.tweet.user.screen_name}</p>
-                                <p>Tweet: { this.state.tweet.text }</p>
-                            </div> :
-                            null }
+                        {this.state.tweet !== null ?
+                            this.state.tweet.map((tweets, index) => {
+                                <div>
+                                    <h1 key={index}>screen name:{ tweets.screen_name }</h1>
+                                    <h2 key={index}>tweet:{ tweets.text }</h2>
+                                </div>
+                            })
+                            // <div>
+                            //     <p>Username: {this.state.tweet.user.screen_name}</p>
+                            //     <p>Tweet: { this.state.tweet.text }</p>
+                            // </div> :
+                            : null }
                     </form>
                 </div>
             </div>

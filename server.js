@@ -17,7 +17,7 @@ app.get(`/api`, (req, res) => {
     
     axios({
         method: 'get',
-        url: `https://api.twitter.com/1.1/search/tweets.json?q=from:${username}&lang=en`,
+        url: `https://api.twitter.com/1.1/search/tweets.json?q=from:${username}&lang=en&count=5`,
         headers: {
             Authorization: `Bearer ${token}`
         }
