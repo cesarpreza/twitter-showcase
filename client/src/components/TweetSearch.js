@@ -44,6 +44,8 @@ class TweetSearch extends Component {
                         <div>
                             <li key={index}>{tweets.text}</li>
                             <li key={index}>{tweets.user.screen_name}</li>
+                            <li>{tweets.retweet_count}</li>
+                            <li>{ tweets.favorite_count}</li>
                         </div>
                     )}
                 </div>

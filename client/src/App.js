@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Router>
         <nav className='navbar navbar-light navbar-expand-sm'>
-          <h3 className='navbar-brand'>Tweet Hunt</h3>
+          <h3 className='navbar-brand'>Tweet Finder</h3>
             <ul className='navbar-nav ml-auto'>
               <li className='nav-item'>
                 <Link className='nav-link' to="/">
