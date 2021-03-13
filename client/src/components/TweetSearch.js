@@ -7,7 +7,7 @@ class TweetSearch extends Component {
         this.state = {
             searchTerm: '',
             isInputValid: false,
-            tweet: null
+            tweet: []
         }
         this.handleChange = this.handleChange.bind(this);
         this.HandleSubmit = this.handleSubmit.bind(this);
@@ -37,19 +37,15 @@ class TweetSearch extends Component {
                     <form>
                         <input required type='text' value={this.state.searchTerm} onChange={this.handleChange} placeholder='search for a tweet..'></input>
                         <button onClick={this.handleSubmit}>Search</button>
-                        {this.state.tweet !== null ?
-                            this.state.tweet.map((tweets, index) => {
-                                <div>
-                                    <h1 key={index}>screen name:{ tweets.screen_name }</h1>
-                                    <h2 key={index}>tweet:{ tweets.text }</h2>
-                                </div>
-                            })
-                            // <div>
-                            //     <p>Username: {this.state.tweet.user.screen_name}</p>
-                            //     <p>Tweet: { this.state.tweet.text }</p>
-                            // </div> :
-                            : null }
                     </form>
+                </div>
+                <div>
+                    {this.state.tweet.map((tweets, index) =>
+                        <div>
+                            <li key={index}>{tweets.text}</li>
+                            <li key={index}>{tweets.user.screen_name}</li>
+                        </div>
+                    )}
                 </div>
             </div>
         )
