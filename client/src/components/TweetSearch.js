@@ -53,7 +53,7 @@ class TweetSearch extends Component {
                     {this.state.tweet.map((tweets, index) =>
                         <div className='searchTweetCard'>
                             <p>Text: {tweets.text}</p>
-                            <p>Username: {tweets.user.screen_name}</p>
+                            <p>Username: {tweets.user.screen_name}</p> {/*add spacing between tweet cards! bootstrap? CSS? */}
                             <p>Retweets: {tweets.retweet_count}</p>
                             <p>favorites: { tweets.favorite_count}</p>
                         </div>

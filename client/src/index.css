@@ -32,7 +32,7 @@ figure img {
 
 .searchTweetCard {
 	background-color: #edffec;
-	margin-top: 25px;
+	margin: auto;
 	padding: 20px;
 	width: 50%;
 }
