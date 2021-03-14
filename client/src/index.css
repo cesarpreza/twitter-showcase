@@ -1,21 +1,22 @@
+.btn-space {
+	margin: 26px;
+}
+
 nav {
-	background-color: #28527a;
+	background-color: #393e46;
 }
 
 .page-container {
+	background-color: #e8eae6;
 	height: 100vh;
-	background-color: #9fb8ad;
-}
-
-.tweet-container {
-	background-color: #314e52;
-	margin-top: 25px;
-	height: 75vh;
-	width: 100%;
 }
 
 .tweetCard {
-	background-color: blue;
+	background-color: #edffec;
+	margin: auto;
+	padding: 20px;
+	height: 10%;
+	width: 50%;
 }
 
 figure img {
@@ -23,4 +24,15 @@ figure img {
 	height: 100px;
 	margin: 20px;
 	width: 115px;
+}
+
+.search-header {
+	background-color: blue;
+}
+
+.searchTweetCard {
+	background-color: #edffec;
+	margin-top: 25px;
+	padding: 20px;
+	width: 50%;
 }

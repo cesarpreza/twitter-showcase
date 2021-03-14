@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <nav className='navbar navbar-light navbar-expand-sm'>
+        <nav className='navbar navbar-dark navbar-expand-sm'>
           <h3 className='navbar-brand'>Tweet Finder</h3>
             <button className='navbar-toggler' data-toggle='collapse' data-target='#navbarMenu'>
               <span className='navbar-toggler-icon'></span>

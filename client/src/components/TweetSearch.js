@@ -40,20 +40,22 @@ class TweetSearch extends Component {
         console.log(this.state.tweet)
         return (
             <div className='page-container'>
-                <div>
-                    <h1>Search for a twitter user</h1>
+                <div className='tweet-card'>
+                    <div className='search-header'>
+                        <h3>Search for a twitter user using their twitter handle</h3>
+                    </div>
                     <form>
-                        <input onKeyDown={this.handleKeyDown} required type='text' value={this.state.searchTerm} onChange={this.handleChange} placeholder='search for a tweet..'></input>
+                        <input className='input' onKeyDown={this.handleKeyDown} required type='text' value={this.state.searchTerm} onChange={this.handleChange} placeholder='search for a tweet..'></input>
                         <button onClick={this.handleSubmit}>Search</button>
                     </form>
                 </div>
                 <div>
                     {this.state.tweet.map((tweets, index) =>
-                        <div className='tweetCard'>
-                            <p>{tweets.text}</p>
-                            <p>{tweets.user.screen_name}</p>
-                            <p>{tweets.retweet_count}</p>
-                            <p>{ tweets.favorite_count}</p>
+                        <div className='searchTweetCard'>
+                            <p>Text: {tweets.text}</p>
+                            <p>Username: {tweets.user.screen_name}</p>
+                            <p>Retweets: {tweets.retweet_count}</p>
+                            <p>favorites: { tweets.favorite_count}</p>
                         </div>
                     )}
                 </div>

@@ -48,16 +48,18 @@ class RandomTweet extends Component {
                                     <img className='image' src={disneyImage}></img>
                                 </figure>
                                 <div>
-                                    <button id='kingsButton' onClick={() => this.handleClick('lakings')}>Kings</button>
-                                    <button id='espnButton' onClick={() => this.handleClick('espn')}>ESPN</button>
-                                    <button id='nasaButton' onClick={() => this.handleClick('nasa')}>Nasa</button>
-                                    <button id='starWarsButton' onClick={() => this.handleClick('starwars')}>Star Wars</button>
-                                    <button id='disneyButton' onClick={() => this.handleClick('disney')}>Disney</button>
+                                    <button className='btn btn-dark btn-space' id='kingsButton' onClick={() => this.handleClick('lakings')}>LA Kings</button>
+                                    <button className='btn btn-dark btn-space' id='espnButton' onClick={() => this.handleClick('espn')}>ESPN</button>
+                                    <button className='btn btn-dark btn-space' id='nasaButton' onClick={() => this.handleClick('nasa')}>Nasa</button>
+                                    <button className='btn btn-dark btn-space' id='starWarsButton' onClick={() => this.handleClick('starwars')}>Star Wars</button>
+                                    <button className='btn btn-dark btn-space' id='disneyButton' onClick={() => this.handleClick('disney')}>Disney</button>
                             </div>
                                     {this.state.tweet !== null ?
                                         <div className='tweetCard'>
                                             <p>username: {this.state.tweet.user.screen_name} </p>
-                                            <p>tweet: { this.state.tweet.text }</p>
+                                            <p>tweet: {this.state.tweet.text}</p>
+                                            <p>Retweets: {this.state.tweet.retweet_count}</p>
+                                            <p>Favorites: { this.state.tweet.favorite_count}</p>
                                         </div> :
                                         null }
                                     
