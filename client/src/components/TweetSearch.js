@@ -23,8 +23,16 @@ class TweetSearch extends Component {
             .get(`/api?username=${this.state.searchTerm}`)
             .then(res => {
                 this.setState({ tweet: res.data.statuses, searchTerm: '' })
+            }).catch(err => {
+                console.log(err)
             })
         console.log('submit');
+    }
+
+    handleKeyDown = e => {
+        if (e.key === ' ') {
+            e.preventDefault();
+        }
     }
 
     render() {
@@ -35,17 +43,17 @@ class TweetSearch extends Component {
                 <div>
                     <h1>Search for a twitter user</h1>
                     <form>
-                        <input required type='text' value={this.state.searchTerm} onChange={this.handleChange} placeholder='search for a tweet..'></input>
+                        <input onKeyDown={this.handleKeyDown} required type='text' value={this.state.searchTerm} onChange={this.handleChange} placeholder='search for a tweet..'></input>
                         <button onClick={this.handleSubmit}>Search</button>
                     </form>
                 </div>
                 <div>
                     {this.state.tweet.map((tweets, index) =>
-                        <div>
-                            <li key={index}>{tweets.text}</li>
-                            <li key={index}>{tweets.user.screen_name}</li>
-                            <li>{tweets.retweet_count}</li>
-                            <li>{ tweets.favorite_count}</li>
+                        <div className='tweetCard'>
+                            <p>{tweets.text}</p>
+                            <p>{tweets.user.screen_name}</p>
+                            <p>{tweets.retweet_count}</p>
+                            <p>{ tweets.favorite_count}</p>
                         </div>
                     )}
                 </div>

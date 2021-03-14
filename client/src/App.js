@@ -12,6 +12,10 @@ function App() {
       <Router>
         <nav className='navbar navbar-light navbar-expand-sm'>
           <h3 className='navbar-brand'>Tweet Finder</h3>
+            <button className='navbar-toggler' data-toggle='collapse' data-target='#navbarMenu'>
+              <span className='navbar-toggler-icon'></span>
+            </button>
+          <div class='collapse navbar-collapse' id='navbarMenu'>
             <ul className='navbar-nav ml-auto'>
               <li className='nav-item'>
                 <Link className='nav-link' to="/">
@@ -29,6 +33,7 @@ function App() {
                 </Link>
               </li>
             </ul>
+          </div>
         </nav>
           <Switch>
             <Route path='/' exact component={HomePage} />
