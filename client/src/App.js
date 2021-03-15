@@ -19,17 +19,17 @@ function App() {
             <ul className='navbar-nav ml-auto'>
               <li className='nav-item'>
                 <Link className='nav-link' to="/">
-                  <button className='btn btn-secondary'>Home</button>
+                  <button className='btn btn-secondary btn-sm'>Home</button>
                 </Link>
               </li>
               <li className='nav-item'>
                 <Link className='nav-link' to="/search">
-                  <button className='btn btn-secondary'>Search</button>
+                  <button className='btn btn-secondary btn-sm'>Search</button>
                 </Link>
               </li>
               <li className='nav-item'>
                 <Link className='nav-link' to="/random">
-                  <button className='btn btn-secondary'>Random Tweet</button>
+                  <button className='btn btn-secondary btn-sm'>Random Tweet</button>
                 </Link>
               </li>
             </ul>

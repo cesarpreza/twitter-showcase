@@ -1,12 +1,14 @@
-import React, { Component, useDebugValue } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Form } from 'react-bootstrap';
 
 class TweetSearch extends Component {
     constructor() {
         super()
         this.state = {
             searchTerm: '',
-            isInputValid: false,
+            isInputValid: true,
             tweet: []
         }
         this.handleChange = this.handleChange.bind(this);
@@ -19,14 +21,16 @@ class TweetSearch extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        axios
-            .get(`/api?username=${this.state.searchTerm}`)
-            .then(res => {
-                this.setState({ tweet: res.data.statuses, searchTerm: '' })
-            }).catch(err => {
-                console.log(err)
-            })
-        console.log('submit');
+        if (this.state.searchTerm === '') {
+            alert('enter a user')
+        } else {
+            axios
+                .get(`/api?username=${this.state.searchTerm}`)
+                .then(res => {
+                    this.setState({ tweet: res.data.statuses, searchTerm: '' })
+                })
+            console.log('submit');
+        }
     }
 
     handleKeyDown = e => {
@@ -46,7 +50,7 @@ class TweetSearch extends Component {
                     </div>
                     <form>
                         <input className='input' onKeyDown={this.handleKeyDown} required type='text' value={this.state.searchTerm} onChange={this.handleChange} placeholder='search for a tweet..'></input>
-                        <button onClick={this.handleSubmit}>Search</button>
+                        <button className='btn btn-primary btn-sm' onClick={this.handleSubmit}>Search</button>
                     </form>
                 </div>
                 <div>
