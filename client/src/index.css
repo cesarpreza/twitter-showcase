@@ -2,12 +2,17 @@
 	margin: 26px;
 }
 
+#input-form {
+	justify-content: center;
+}
+
 nav {
 	background-color: #393e46;
 }
 
 .page-container {
 	background-color: #e8eae6;
+	height: 100vh;
 }
 
 .tweetCard {
