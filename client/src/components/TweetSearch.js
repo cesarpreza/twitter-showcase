@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Form } from 'react-bootstrap';
+import { Form, Card } from 'react-bootstrap';
 
 class TweetSearch extends Component {
     constructor() {
@@ -64,12 +64,17 @@ class TweetSearch extends Component {
                 </div>
                 <div>
                     {this.state.tweet.map((tweets, index) =>
-                        <div className='searchTweetCard'>
-                            <p>Text: {tweets.text}</p>
-                            <p>Username: {tweets.user.screen_name}</p> {/*add spacing between tweet cards! bootstrap? CSS? */}
-                            <p>Retweets: {tweets.retweet_count}</p>
-                            <p>favorites: { tweets.favorite_count}</p>
-                        </div>
+                        <Card>
+                            <Card.Body>
+                                <Card.Text>Text: {tweets.text}</Card.Text>
+                                <Card.Text>Username: {tweets.user.screen_name}</Card.Text>
+                                <Card.Text>Retweets: {tweets.retweet_count}</Card.Text>
+                                <Card.Text>favorites: {tweets.favorite_count}</Card.Text>
+                                <Card.Img src={tweets.user.profile_image_url} style={{height: 40, width: 40}} />
+                            </Card.Body> 
+                             {/*add spacing between tweet cards! bootstrap? CSS? */}
+                            
+                        </Card>
                     )}
                 </div>
             </div>

@@ -59,7 +59,8 @@ class RandomTweet extends Component {
                                             <p>username: {this.state.tweet.user.screen_name} </p>
                                             <p>tweet: {this.state.tweet.text}</p>
                                             <p>Retweets: {this.state.tweet.retweet_count}</p>
-                                            <p>Favorites: { this.state.tweet.favorite_count}</p>
+                                            <p>Favorites: {this.state.tweet.favorite_count}</p>
+                                            <img src={this.state.tweet.user.profile_image_url} alt='user photo'/>
                                         </div> :
                                         null }
                                     
