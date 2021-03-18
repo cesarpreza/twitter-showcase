@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Card } from 'react-bootstrap';
+import RetweetIcon from '../images/retweet.png';
+import LikesIcon from '../images/heart.png';
 
 class TweetSearch extends Component {
     constructor() {
@@ -46,11 +48,10 @@ class TweetSearch extends Component {
             <div className='search-page-container'>
                 <div className='tweet-card'>
                     <div className='search-header'>
-                        <h3>Search for a user</h3>
+                        <h3>Search for a Twitter user</h3>
                     </div>
                     <Form>
                         <Form.Group>
-                            <Form.Label>Search for a Twitter user</Form.Label>
                             <div id='input-form' className='row'>
                                 <div className='col-auto'>
                                     <Form.Control type='input' className='form-control-md' onKeyDown={this.handleKeyDown} required type='text' value={this.state.searchTerm} onChange={this.handleChange} placeholder='ex. elonmusk'></Form.Control>
@@ -62,18 +63,27 @@ class TweetSearch extends Component {
                         </Form.Group>
                     </Form>
                 </div>
-                <div>
+                <div className='search-tweet-container'>
                     {this.state.tweet.map((tweets, index) =>
-                        <Card>
-                            <Card.Body>
-                                <Card.Text>Text: {tweets.text}</Card.Text>
-                                <Card.Text>Username: {tweets.user.screen_name}</Card.Text>
-                                <Card.Text>Retweets: {tweets.retweet_count}</Card.Text>
-                                <Card.Text>favorites: {tweets.favorite_count}</Card.Text>
-                                <Card.Img src={tweets.user.profile_image_url} style={{height: 40, width: 40}} />
-                            </Card.Body> 
+                        <Card key={index} id='search-card' style={{ width: '50%' }} className='bg-light'>
+                                <Card.Header>
+                                    <Card.Img className='rounded-circle' variant='top' src={tweets.user.profile_image_url} style={{height: 50, width: 50}} />
+                                    <Card.Title>{tweets.user.screen_name}</Card.Title>
+                                </Card.Header>
+                                <Card.Body>
+                                    <Card.Text>{tweets.text}</Card.Text>
+                                </Card.Body>
+                                <Card.Footer>
+                                <small>
+                                    <img src={RetweetIcon} style={{height: 20, width: 20}} />
+                                        {tweets.retweet_count}
+                                </small>
+                                <small>
+                                    <img src={LikesIcon} style={{height: 20, width: 20}} />
+                                    {tweets.favorite_count}
+                                </small>
+                                </Card.Footer>
                              {/*add spacing between tweet cards! bootstrap? CSS? */}
-                            
                         </Card>
                     )}
                 </div>

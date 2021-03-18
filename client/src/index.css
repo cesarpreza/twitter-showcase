@@ -4,6 +4,7 @@
 
 #input-form {
 	justify-content: center;
+	margin-top: 50px;
 }
 
 nav {
@@ -34,9 +35,9 @@ figure img {
 	background-color: blue;
 }
 
-.searchTweetCard {
-	background-color: #edffec;
+#search-card {
+	justify-content: center;
 	margin: auto;
-	padding: 20px;
-	width: 50%;
+	margin-bottom: 20px;
+	padding: 15px;
 }
