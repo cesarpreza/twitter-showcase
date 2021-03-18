@@ -5,6 +5,9 @@ import espnImage from '../images/espn.png';
 import laKingsImage from '../images/la_kings.png';
 import disneyImage from '../images/disney.png';
 import starWarsImage from '../images/star-wars.jpg';
+import LikesIcon from '../images/heart.png';
+import RetweetIcon from '../images/retweet.png';
+import { Card } from 'react-bootstrap';
 
 class RandomTweet extends Component {
     constructor(props) {
@@ -55,13 +58,27 @@ class RandomTweet extends Component {
                                     <button className='btn btn-dark btn-space' id='disneyButton' onClick={() => this.handleClick('disney')}>Disney</button>
                             </div>
                                     {this.state.tweet !== null ?
-                                        <div className='tweetCard'>
-                                            <p>username: {this.state.tweet.user.screen_name} </p>
-                                            <p>tweet: {this.state.tweet.text}</p>
-                                            <p>Retweets: {this.state.tweet.retweet_count}</p>
-                                            <p>Favorites: {this.state.tweet.favorite_count}</p>
-                                            <img src={this.state.tweet.user.profile_image_url} alt='user photo'/>
-                                        </div> :
+                                    <Card id='search-card'>
+                                        <Card.Header>
+                                            <Card.Img src={this.state.tweet.user.profile_image_url}
+                                                className='rounded-circle'
+                                                style={{ height: 45, width: 45 }} />
+                                            </Card.Header>
+                                            <Card.Body>
+                                                <Card.Title>{this.state.tweet.user.screen_name}</Card.Title>
+                                                <Card.Text>{this.state.tweet.text}</Card.Text>
+                                            </Card.Body>
+                                            <Card.Footer>
+                                                <small className='icon'>
+                                                    <img src={RetweetIcon} style={{ height: 20, width: 20 }} />
+                                                    {this.state.tweet.retweet_count}
+                                                </small>
+                                                <small className='icon'>
+                                                    <img src={LikesIcon} style={{ height: 20, width: 20 }} />
+                                                    {this.state.tweet.favorite_count}
+                                                </small>
+                                            </Card.Footer>
+                                        </Card> :
                                         null }
                                     
                                 </div>

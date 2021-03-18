@@ -2,26 +2,22 @@
 	margin: 26px;
 }
 
+.icon {
+	padding: 5px;
+}
+
 #input-form {
 	justify-content: center;
-	margin-top: 50px;
+	margin-top: 20px;
+	margin-bottom: 40px;
 }
 
 nav {
 	background-color: #393e46;
 }
 
-.page-container {
-	background-color: #e8eae6;
-	height: 100vh;
-}
-
-.tweetCard {
-	background-color: #edffec;
-	margin: auto;
-	padding: 20px;
-	height: 10%;
-	width: 50%;
+#tweet-image {
+	justify-content: center;
 }
 
 figure img {
@@ -32,7 +28,7 @@ figure img {
 }
 
 .search-header {
-	background-color: blue;
+	padding: 20px;
 }
 
 #search-card {
@@ -40,4 +36,11 @@ figure img {
 	margin: auto;
 	margin-bottom: 20px;
 	padding: 15px;
+	width: 50%;
+}
+
+#welcome-message {
+	margin: auto;
+	margin-top: 10%;
+	width: 50%;
 }
