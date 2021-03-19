@@ -2,13 +2,34 @@ const axios = require('axios');
 const express = require('express');
 const path = require('path');
 const port = 3000;
+const cors = require('cors');
 require('dotenv').config();
 const token = process.env.TOKEN;
 
 
 const app = express();
 
-app.use('/', express.static(path.join(__dirname , 'client/build')));
+const whitelist = ['http://localhost:3000'​, 'http://localhost:8080'​, 'https://shrouded-journey-38552.heroku...​']
+const corsOptions = {
+    origin: function (origin, callback) {
+        console.log("** Origin of request " + origin)
+        if (whitelist.indexOf(origin) !== -1 || !origin) {
+            console.log("Origin acceptable")
+        callback(null, true)
+    } else {
+        console.log("Origin rejected")
+        callback(new Error('Not allowed by CORS'))
+    }
+    }
+}
+app.use(cors(corsOptions))
+
+if (process.env.NODE_ENV === 'production') {
+    app.use('/', express.static(path.join(__dirname, 'client/build')));
+    app.get('*', function (req, res) {
+        res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    })
+}
 
 app.listen(port, () => console.log('listening on port 3000'));
 
@@ -33,5 +54,3 @@ app.get("/*", (req, res) =>
     res.sendFile(path.join(__dirname, "client", "build", "index.html"))
 );
 
-//make call to relative path using tweetData
-//In HomePage/App.js make axios call to server to pull data to front end. 
