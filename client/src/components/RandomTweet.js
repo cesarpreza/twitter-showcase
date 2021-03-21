@@ -29,11 +29,9 @@ class RandomTweet extends Component {
         const tweetResponse = tweetUrl.data.statuses;
         const randomTweet = tweetResponse[Math.floor(Math.random() * tweetResponse.length)];
         this.setState({ tweet: randomTweet });
-        console.log(randomTweet.user.screen_name);
     }
 
     render() {
-        console.log(this.state)
         return (
             <div className='page-container'>
                 <main>

@@ -31,7 +31,6 @@ class TweetSearch extends Component {
                 .then(res => {
                     this.setState({ tweet: res.data.statuses, searchTerm: '' })
                 })
-            console.log('submit');
         }
     }
 
@@ -42,8 +41,6 @@ class TweetSearch extends Component {
     }
 
     render() {
-        console.log(this.state.searchTerm);
-        console.log(this.state.tweet)
         return (
             <div className='search-page-container'>
                 <div className='tweet-card'>
