@@ -20,7 +20,7 @@ retweet count all in the card.
 
 # Summary
 
-This application continued my learning into APIs and intorudcing me to client/server side applicatons. Taking the skills I have accumulated with past projects and applying them 
+This application continued my learning into APIs and introduced me to client/server side applicatons. Taking the skills I have accumulated with past projects and applying them 
 to this full stack application is great insight into how a bigger application would work in modern day companies. Taking what I have learned from this project I will continue to
 build more complex projects. 
 
