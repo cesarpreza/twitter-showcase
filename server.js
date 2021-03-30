@@ -12,7 +12,6 @@ app.use('/', express.static(path.join(__dirname, 'client/build')));
 
 
 
-app.listen(port, () => console.log('listening on port 3000'));
 
 app.get(`/api`, (req, res) => {
     const username = req.query.username ;
@@ -24,14 +23,19 @@ app.get(`/api`, (req, res) => {
             Authorization: `Bearer ${token}`
         }
     })
-        .then((response) => {
-            res.json(response.data);
-        }).catch((err) => {
+    .then((response) => {
+        res.json(response.data);
+    }).catch((err) => {
         console.log(err.message)
     })
 })
 
 app.get("/*", (req, res) =>
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"))
+res.sendFile(path.join(__dirname, "client", "build", "index.html"))
 );
 
+<<<<<<< HEAD
+=======
+
+app.listen(port, () => console.log('listening on port 3000'));
+>>>>>>> styling

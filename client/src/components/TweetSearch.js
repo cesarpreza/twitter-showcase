@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import TweetCard from './TweetCard';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Form, Card } from 'react-bootstrap';
-import RetweetIcon from '../images/retweet.png';
-import LikesIcon from '../images/heart.png';
+import { Form } from 'react-bootstrap';
 
 class TweetSearch extends Component {
     constructor() {
@@ -63,26 +62,7 @@ class TweetSearch extends Component {
                 </div>
                 <div className='search-tweet-container'>
                     {this.state.tweet.map((tweets, index) =>
-                        <Card key={index} id='search-card'>
-                                <Card.Header>
-                                    <Card.Img className='rounded-circle' variant='top' src={tweets.user.profile_image_url} style={{height: 45, width: 45}} />
-                                </Card.Header>
-                                <Card.Body>
-                                    <Card.Title>{tweets.user.screen_name}</Card.Title>
-                                    <Card.Text>{tweets.text}</Card.Text>
-                                </Card.Body>
-                                <Card.Footer>
-                                <small className='icon'>
-                                    <img src={RetweetIcon} style={{height: 20, width: 20}} />
-                                        {tweets.retweet_count}
-                                </small>
-                                <small className='icon'>
-                                    <img src={LikesIcon} style={{height: 20, width: 20}} />
-                                    {tweets.favorite_count}
-                                </small>
-                                </Card.Footer>
-                             {/*add spacing between tweet cards! bootstrap? CSS? */}
-                        </Card>
+                        <TweetCard key={index} tweets={tweets} />
                     )}
                 </div>
             </div>
