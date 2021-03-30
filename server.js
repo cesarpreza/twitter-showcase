@@ -34,8 +34,5 @@ app.get("/*", (req, res) =>
 res.sendFile(path.join(__dirname, "client", "build", "index.html"))
 );
 
-<<<<<<< HEAD
-=======
 
 app.listen(port, () => console.log('listening on port 3000'));
->>>>>>> styling
